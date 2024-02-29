@@ -1,17 +1,15 @@
 #let meta = (
-  course-name: "Đồ án tổng hợp - hướng Công nghệ phần mềm",
-  course-id: "CO3103",
-  title: "Phát triển hệ thống in ấn 3D",
-  semester: 231,
-  date: "09/2023",
+  course-name: "Thực tập Đồ án môn học đa ngành - hướng Công nghệ phần mềm",
+  course-id: "CO3109",
+  title: "Phát triển ứng dụng đếm giàn giáo dùng AI",
+  semester: 232,
+  date: "02/2024",
   students: (
-    "2110193": "Đỗ Nguyễn An Huy",
-    "2110342": "Nguyễn Minh Lộc",
-    "2114417": "Nguyễn Ngọc Phú",
-    "2112122": "Nguyễn Hồng Quân",
+    "2111356": "Trần Đan Huy",
+    "2113883": "Nguyễn Sỹ Lâm",
+    "2112185": "Cù Hoàng Nguyễn Sơn",
     "2110527": "Nguyễn Hoàng Duy Tân",
-    "2112336": "Phạm Đức Thắng",
-    "2112594": "Trần Nguyễn Minh Tuệ"
+    "2114917": "Nguyễn Hữu Thông",
   ),
-  advisor: "ThS. Mai Đức Trung",
+  advisor: "ThS. Nguyễn Quang Hùng",
 )

@@ -105,30 +105,47 @@
     columns: (auto, auto),
     inset: 10pt,
     align: horizon,
-    [*Use Case Name*], [*Tải mô hình 3D*],
-    [Actors], [Khách hàng.],
-    [Brief Description], [Khách hàng sử dụng chức năng này để upload lên file .gcode của riêng mình.],
-    [Preconditions], [Khách hàng đã truy cập thành công vào trang web và điều hướng tới giao diện Upload.],
-    [Postconditions], [Khách hàng upload thành công file .gcode lên hệ thống và thêm các file này vào giỏ hàng.],
+    [*Use Case Name*], [*Đếm giàn giáo*],
+    [Actors], [Người dùng.],
+    [Brief Description], [Người dùng sử dụng chức năng này để đếm số giàn giáo theo template người dùng đã chọn],
+    [Preconditions], [Người dùng đã đăng nhập và điều hướng tới giao diện Đếm giàn giáo],
+    [Postconditions], [Khách hàng nhận được kết quả phân tích.],
     [Normal Flow], 
-       [ 1. Bên cạnh biểu tượng người dùng trên thanh điều hướng, hệ thống sẽ cung cấp thêm một nút *Upload*.\
-         2. Khách hàng nhấn nút *Upload* để upload file .gcode lên hệ thống.\
-         3. Hệ thống hiển thị lên màn hình một khung giao diện dùng để upload file .gcode.\
-         4. Khách hàng chọn file .gcode từ thiết bị của mình và nhấn nút *Upload* để upload file .gcode lên hệ thống.\
-         5. Khách hàng ấn nút *Xác nhận* để upload file .gcode lên hệ thống.\
-         6. Hệ thống sẽ lưu thông tin file .gcode của khách hàng và hiển thị ra màn hình như những mô hình có sẵn.\
-         7. Mỗi mô hình 3D sẽ có nút *Thêm vào giỏ hàng* để khách hàng thêm mô hình 3D vào giỏ hàng.\
-         8. Khi được thêm vào giỏ hàng, mô hình 3D sẽ được hiển thị trong giỏ hàng.\
+       [ 1. Bên cạnh biểu tượng người dùng trên thanh điều hướng, hệ thống sẽ cung cấp thêm một nút *Đếm*.\
+         2. Khách hàng nhấn nút *Đếm* để bắt đầu.\
+         3. Hệ thống hiển thị lên màn hình một khung giao diện chọn template.\
+         4. Người dùng chọn template trên màn hình và nhấn nút *Proceed* để tiếp tục.\
+         5. Hệ thống camera xuất hiện, Khách hàng có thể ấn nút *Chụp* để lấy ảnh từ camera hoặc chọn nút *Chọn ảnh* để lấy ảnh có sẵn trong máy.\
+         6. Sau khi người dùng chọn ảnh, hệ thống sẽ hiển thị một trình chỉnh sửa ảnh. Người dùng có thể thực hiện các thao tác. Người dùng nhất *CHECK* để gửi file lên hệ thống.\
+         7. Hệ thống trả về ảnh đã đếm kèm số lượng và box các ống giàn giáo nhận diện được và hiển thị lên màn hình.\
+         8. Người dùng có thể include, exclude crop lại hình và gửi lại cho hệ thống xử lý tương tự mục 7. Ngoài ra người dùng có thể xuất file, script. Nếu nguời dùng nhận thấy kết quả không đúng, có thể báo sai cho hệ thống.\
     ],
     [Alternative Flow], [
-        2a. Khách hàng có thể nhấn nút *Hủy* để quay về trang chủ.\ 
-        4a. Khách hàng có thể kéo thả file .gcode vào khung giao diện để upload file .gcode lên hệ thống. \ 
-        5a. Khách hàng có thể tiếp tục ấn nút *Upload* để upload file .gcode khác lên hệ thống thay vì nút *Xác nhận*.
+        4a. Nếu người dùng không chọn Template mà nhấn tiếp tục, tự động chọn Template người dùng đã chọn trước đó.
+        6a. Nếu người dùng nhấn *CHECK* mà không thực hiện bất kỳ thao tác chỉnh sửa ảnh nào, hệ thống sử dụng kích thước ảnh gốc với vùng đánh dấu toàn bộ ảnh và hiệu ứng gốc. 
+        5a. Khách hàng có thể nhấn nút *Đổi Template* để chọn lại template.\ \
+        6b. Người dùng có thể nhấn nút *X* để hủy ảnh vừa chọn và quay trở lại màn hình chọn ảnh
+        6c. Nếu ảnh được hệ thống đánh giá là không rõ ràng (mờ, nhòe, điểm chết đen,...) sẽ hỏi người dùng có muốn tiếp tục không, nếu không thì hủy ảnh vừa chọn và quay trở lại màn hình chọn ảnh
     ],
     [Exception Flow],[
-        5a. Nếu file không có định dạng là .gcode, hệ thống sẽ hiển thị thông báo *File không hợp lệ*.
+        4a1. Nếu người dùng không chọn Template mà nhấn tiếp tục trong lần sử dụng đầu tiên, hệ thống sẽ hiển thị thông báo *Vui lòng chọn template*.
+        5b1. Nếu file người dùng chọn không phải là định dạng ảnh, hệ thống sẽ báo lỗi *File không hợp lệ*
     ],
 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #figure(caption: [Use-case tải mô hình 3D], table())\
 
 #table(
@@ -165,9 +182,7 @@
 #pagebreak()
 
 == Module quản lý mô hình 3D (Managing 3D model)
-#figure(caption: [Module quản lý mô hình 3D],
-    image("../images/usecase/DACNPM-ManageModel.png")
-)
+
 #table(
     columns: (auto, auto),
     inset: 10pt,
@@ -265,9 +280,7 @@
 #pagebreak()
 
 == Module tạo đơn hàng (Model Ordering)
-#figure(caption: [Module tạo đơn hàng],
-    image("../images/usecase/DACNPM-ConfirmOrder.png")
-)
+
 #table(
     columns: (auto, auto),
     inset: 10pt,
@@ -298,9 +311,7 @@
 #pagebreak()
 
 == Module quản lý đơn hàng (Order Management)
-#figure(caption: [Module quản lý đơn hàng],
-    image("../images/usecase/DACNPM-OrderProcess.png")
-)
+
 #table(
     columns: (auto, auto),
     inset: 10pt,
@@ -331,9 +342,7 @@
 
 
 == Module thanh toán đơn hàng (Payment)
-#figure(caption: [Module thanh toán đơn hàng],
-    image("../images/usecase/DACNPM-Payment.png")
-)
+
 #table(
     columns: (auto, auto),
     inset: 10pt,

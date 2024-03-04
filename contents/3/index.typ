@@ -1,69 +1,105 @@
 = Use-case diagram and use-case scenario
 
-#figure(caption: [Use-case tổng quát toàn bộ hệ thống],
-    image("../images/usecase/DACNPM-WholeSystem.png")
-)
 
 #pagebreak()
-== Module mua sắm mô hình 3D (Shopping)
-#figure(caption: [Module mua sắm mô hình 3D],
-    image("../images/usecase/DACNPM-MakeOrder.png")
+== Module Đăng nhập, đăng ký (Authenication)
+#figure(caption: [Module xác thực người dùng],
+    image("./images/Auth.jpg")
 )
 
 #table(
     columns: (auto, auto),
     inset: 10pt,
     align: horizon,
-    [*Use Case Name*], [*Tìm Kiếm Mô hình 3D*],
-    [Actors], [Khách hàng.],
-    [Brief Description], [Khách hàng sử dụng chức năng này để tìm kiếm mô hình 3D, hỗ trợ lọc và sắp xếp dựa trên các tiêu chí khác nhau.],
-    [Preconditions], [Khách hàng truy cập trang web và điều hướng tới trang sản phẩm.],
-    [Postconditions], [Kết quả tìm kiếm được hiển thị dựa trên các tiêu chí lọc và sắp xếp.],
+    [*Use Case Name*], [*Đăng nhập*],
+    [Actors], [Người sử dụng],
+    [Brief Description], [Khách hàng sử dụng chức năng này để đăng nhập vào app.],
+    [Preconditions], [],
+    [Postconditions], [Giao diện chính của app hiện lên],
     [Normal Flow], [
-        1. Khách hàng truy cập trang web và điều hướng đến trang sản phẩm.
-        2. Hệ thống hiển thị danh sách các mô hình 3D và cung cấp một thanh tìm kiếm và các tùy chọn lọc và sắp xếp.
-        3. Khách hàng nhập từ khóa cần tìm kiếm vào thanh tìm kiếm.
-        4. Khách hàng chọn các tiêu chí lọc (ví dụ: phân loại, giá tiền) để giới hạn danh sách mô hình.
-        5. Khách hàng chọn tiêu chí sắp xếp (ví dụ: theo tên mô hình hoặc giá tiền) để sắp xếp danh sách.
-        6. Hệ thống thực hiện tìm kiếm dựa trên từ khóa và tiêu chí lọc và sắp xếp.
-        7. Hệ thống hiển thị danh sách mô hình dựa trên kết quả tìm kiếm, lọc và sắp xếp.
+        1. Khách hàng truy cập vào app, màn hình đăng nhập hiện lên.
+        2. Người dùng nhập tên đăng nhập và mật khẩu, kèm các lựa chọn kèm theo sau đó nhấn nút đăng nhập.
+        3. Hệ thống kiểm tra tên đăng nhập vào mật khẩu.
+        4. Hệ thống hiện giao diện màn hình chính. 
     ],
     [Alternative Flow], [
-        3a. Khách hàng có thể chọn nhiều tiêu chí lọc để kết hợp nhiều điều kiện lọc.\ 
-        5a. Nếu không có kết quả nào phù hợp với tiêu chí lọc, hệ thống thông báo cho khách hàng rằng không tìm thấy kết quả.
+        2a. Người dùng có thể đăng nhập bằng xác thực google thay vì phải nhập thông tin đăng nhập.\ 
+        2b. Nếu lần đăng nhập trước người dùng chọn Nhớ mật khẩu, hệ thống tự động điền email và mật khẩu của người dùng.
+        
     ],
     [Exception Flow], [
-        2a. Nếu không có mô hình nào trong hệ thống hoặc có lỗi trong việc lấy danh sách mô hình, hệ thống thông báo cho khách hàng và không hiển thị danh sách.
+        3a. Nếu thông tin đăng nhập không trùng khớp, hệ thống báo lỗi và yêu cầu khách hàng nhập lại
+        2b. Nếu xác thực google không thành công, hệ thống báo lỗi cho người dùng
     ],
 )
-#figure(caption: [Use-case tìm kiếm mô hình 3D], table())\
+#figure(caption: [Use-case Đăng nhập], table())\
+
+
 
 #table(
     columns: (auto, auto),
     inset: 10pt,
     align: horizon,
-    [*Use Case Name*], [*Xem Thông Tin Mô hình*],
-    [Actors], [Khách hàng.],
-    [Brief Description], [Khách hàng sử dụng chức năng này để xem thông tin chi tiết của một mô hình 3D trong hệ thống.],
-    [Preconditions], [Khách hàng đã truy cập trang web và có quyền truy cập đối với mô hình 3D cần xem.],
-    [Postconditions], [Thông tin chi tiết của mô hình 3D được hiển thị cho khách hàng.],
+    [*Use Case Name*], [*Đăng nhập*],
+    [Actors], [Người sử dụng],
+    [Brief Description], [Khách hàng sử dụng chức năng này để đăng nhập vào app.],
+    [Preconditions], [],
+    [Postconditions], [Giao diện chính của app hiện lên],
     [Normal Flow], [
-        1. Khách hàng truy cập trang web và điều hướng đến trang sản phẩm.
-        2. Hệ thống hiển thị danh sách các mô hình 3D.
-        3. Khách hàng chọn một mô hình từ danh sách để xem thông tin chi tiết.
-        4. Hệ thống hiển thị thông tin chi tiết của mô hình, bao gồm tên, mô tả, giá tiền, hình ảnh, và thông tin khác.
+        1. Khách hàng truy cập vào app, màn hình đăng nhập hiện lên.
+        2. Người dùng nhập tên đăng nhập và mật khẩu, kèm các lựa chọn kèm theo sau đó nhấn nút đăng nhập.
+        3. Hệ thống kiểm tra tên đăng nhập vào mật khẩu.
+        4. Hệ thống hiện giao diện màn hình chính. 
     ],
     [Alternative Flow], [
-        4a1. Trong quá trình xem thông tin mô hình, khách hàng có thể chọn "Like" mô hình.\ 
-        4a2. Hệ thống ghi nhận lượt "Like" cho sản phẩm và thêm mô hình vào danh sách mô hình đã "Like" của khách hàng.\ \
-        4b1. Trong quá trình xem thông tin mô hình, khách hàng có thể chọn "Thêm vào Giỏ Hàng".\
-        4b2. Hệ thống ghi nhận lựa chọn của khách hàng và thêm mô hình vào giỏ hàng của khách hàng.
+        2a. Người dùng có thể đăng nhập bằng xác thực google thay vì phải nhập thông tin đăng nhập.\ 
+        2b. Nếu lần đăng nhập trước người dùng chọn Nhớ mật khẩu, hệ thống tự động điền email và mật khẩu của người dùng.
+        
     ],
     [Exception Flow], [
-        3a. Nếu mô hình không tồn tại hoặc có lỗi trong việc lấy thông tin mô hình, hệ thống thông báo cho khách hàng rằng không thể xem thông tin mô hình.
+        3a. Nếu thông tin đăng nhập không trùng khớp, hệ thống báo lỗi và yêu cầu khách hàng nhập lại
+        2b. Nếu xác thực google không thành công, hệ thống báo lỗi cho người dùng
     ],
 )
-#figure(caption: [Use-case xem thông tin mô hình 3D], table())\
+#figure(caption: [Use-case Đăng ký], table())\
+
+#table(
+    columns: (auto, auto),
+    inset: 10pt,
+    align: horizon,
+    [*Use Case Name*], [*Đăng ký*],
+    [Actors], [Người dùng.],
+    [Brief Description], [Khách hàng sử dụng chức năng này để đăng ký],
+    [Preconditions], [Khách hàng đang ở màn hình đăng nhập],
+    [Postconditions], [Một tài khoản mới đã được tạo, Giao diện chính của app hiện lên],
+    [Normal Flow], [
+        1. Khách hàng truy cập phần Đăng ký bằng cách nhấn đăng ký trên màn hình đăng nhập.
+        2. Hệ thống hiển thị màn hình đăng ký.
+        3. Khách hàng nhập các thông tin cơ bản như tên đăng nhập, mật khẩu, email và ấn nút đăng ký
+        4. Hệ thống kiểm tra thông tin đăng ký, rồi gửi một email mã xác nhận đến email đăng ký, sau đó hiển thị màn hình nhập mã.
+        5. Người dùng nhập mã rồi ấn xác nhận
+        6. Hệ thống thông báo đăng ký thành công, giao diện chính hiện lên.
+    ],
+    [Alternative Flow], [
+        1a. Nếu người dùng ấn xác thực google mà chưa có dữ liệu về tài khoản. Hệ thống tự tạo một tài khoản tương ứng với xác thực google.
+        
+        5a1. Sau một khoảng thời gian nhất định, nếu người dùng không nhập mã, hệ thống sẽ hiển thị lựa chọn gửi lại email xác nhận cho người dùng. 
+        5a2. Người dùng có thể quay trở lại màn hình nhập thông tin đăng ký.
+
+    ],
+    [Exception Flow], [
+        4a. Nếu tên người dùng đã tồn tại, hệ thống thông báo tài khoản đã tồn tại và yêu cầu người dùng nhập lại.
+    ],
+)
+#figure(caption: [Use-case Đăng ký], table())\
+
+
+#pagebreak()
+== Module Đếm giàn giáo bằng ảnh
+#figure(caption: [Module đếm giàn giáo],
+    image("./images/counting.jpg")
+)
+
 
 #table(
     columns: (auto, auto),

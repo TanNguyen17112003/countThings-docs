@@ -1,7 +1,6 @@
 = Use-case diagram and use-case scenario
 
 
-#pagebreak()
 == Module Đăng nhập, đăng ký (Authenication)
 #figure(caption: [Module xác thực người dùng],
     image("./images/Auth.jpg")

@@ -5,50 +5,40 @@ Như đã đề cập ở phần Phạm vi dự án, nhóm sẽ ưu tiên mức 
 == Yêu cầu chức năng
 === User Story
 ==== Đối với khách hàng
-#block(inset: (left:1cm))[
-    - Khách hàng phải đăng nhập vào hệ thống để sử dụng các dịch vụ.
-    - Khách hàng thay đổi thông tin của người dùng như tên đăng nhập, ngày sinh,...
-    - Khách hàng lựa chọn các loại giàn giáo dựa vào template có sẵn của hệ thống.
-    - Khách hàng lựa chọn file ảnh có sẵn và đưa lên hệ thống.
-    - Khách hàng chụp ảnh trực tiếp và đưa lên hệ thống.
-    - Khách hàng tiến hành xuất file báo cáo về số lượng giàn giáo, ngày giờ thông qua kết quả trả về.
-]
+- *Đăng nhập vào hệ thống để sử dụng các dịch vụ*
+#grid(
+    columns: (1fr, 1fr),
+    gutter: 20pt,
+    figure(caption:"Màn hình ứng dụng chào mừng người dùng", image("../assets/login-image1.png", fit: "contain")),
+    figure(caption:"Màn hình ứng dụng trang đăng nhập", image("../assets/login-image2.png", fit: "contain"))
+)
+
+- *Khách hàng thay đổi thông tin của người dùng như tên đăng nhập, ngày sinh,...*
+#figure(caption: "Màn hình ứng dụng khi thay đổi thông tin cá nhân", image("../assets/change-info-image.png", fit: "contain"))
+
+- *Khách hàng lựa chọn các loại giàn giáo dựa vào template có sẵn của hệ thống*
+#grid(
+    columns: (1fr, 1fr),
+    gutter: 20pt,
+    figure(caption:"Màn hình ứng dụng khi đã lựa chọn loại giàn giáo", image("../assets/select-template-image1.png", fit: "contain")),
+    figure(caption:"Màn hình ứng dụng các loại giàn giáo", image("../assets/select-template-image2.png", fit: "contain"))
+)
+
+- *Khách hàng lựa chọn file ảnh có sẵn hoặc chụp ảnh trực tiếp*
+#figure(caption: "Màn hình ứng dụng khi ảnh đã được chọn", image("../assets/select-photo-image.png", fit: "contain"))
+
+- *Khách hàng tiến hành xuất file báo cáo về số lượng giàn giáo, ngày giờ thông qua kết quả trả về*
+
 
 === Đối với quản lý
-#block(inset: (left:1cm))[
-    - Quản lý thêm, sửa, xóa template về các loại giàn giáo.
-    - Quản lý xem thông tin của người dùng.
-    - Quản lý xem thông tin về số lượng người dùng sử dụng hệ thống.
-    - Quản lý xem thông tin về số lượng file ảnh đã được tải lên hệ thống.
-]
+- *Quản lý thêm, sửa, xóa template về các loại giàn giáo.*
+#figure(caption: "Màn hình ứng dụng khi điều chỉnh các template", image("../assets/modify-template-image.png", fit: "contain"))
 
-=== Chức năng hệ thống
+- *Quản lý xem thông tin của người dùng.*
+#figure(caption: "Màn hình ứng dụng khi xem thông tin người dùng", image("../assets/modify-user-image.png", fit: "contain"))
 
-==== Đăng nhập
-#block(inset: (left:1cm))[
-    - Hệ thống phải hỗ trợ đăng nhập người dùng qua Google.
-    - Hệ thống phải hỗ trợ đăng ký tài khoản mới.
-]
-
-==== Quản lý người dùng
-#block(inset: (left:1cm))[
-    - Hệ thống phải hỗ trợ người dùng thay đổi thông tin cá nhân như tên đăng nhập, ngày sinh,...
-]
-
-==== Quản lý template
-#block(inset: (left:1cm))[
-    - Hệ thống phải hỗ trợ quản lý thêm, sửa, xóa template về các loại giàn giáo.
-]
-
-==== Quản lý file ảnh
-#block(inset: (left:1cm))[
-    - Hệ thống phải hỗ trợ kết nối tới thư mục ảnh của người dùng và cho phép người dùng tải ảnh có sẵn hoặc chụp ảnh trực tiếp.
-]
-
-==== Xuất báo cáo
-#block(inset: (left:1cm))[
-    - Hệ thống phải hỗ trợ tính năng xuất báo cáo về số lượng giàn giáo và ngày giờ xuất báo cáo.
-]
+- *Quản lý xem thông tin về số lượng file ảnh đã được tải lên hệ thống.*
+#figure(caption: "Màn hình ứng dụng khi xem thông tin ảnh", image("../assets/modify-photo-image.png", fit: "contain"))
 
 == Yêu cầu phi chức năng
 #block(inset: (left:1cm))[

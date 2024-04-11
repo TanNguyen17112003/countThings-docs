@@ -62,7 +62,26 @@ Các thông số cần chú ý:
 Những thông số này là thước đo để đánh giá độ hiệu quả của model trên lý thuyết.
 === Đánh giá Model nhận diện giàn giáo Type4-IQC1524
 Sau khi mất 0,851 giờ cho quá trình train với 100 chu kỳ, ta thu được các thông số sau mỗi chu kỳ theo dạng biểu đồ như sau:
+#figure(caption: "Precision(Box) của Model nhận diện IQC1524",
+    image("./img/Precisionv8.png", fit: "contain"))
+#figure(caption: "Recall(Box) của Model nhận diện IQC1524",
+    image("./img/Recallv8.png", fit: "contain"))
+#figure(caption: "mAP50(Box) của Model nhận diện IQC1524",
+    image("./img/map50v8.png", fit: "contain"))
+- Precision, Recall và mAP50 trong 20 epoch đầu có sự biến động, sau đó có sự ổn định đến cuối
+#figure(caption: "mAP50-95(Box) của Model nhận diện IQC1524",
+    image("./img/map5095v8.png", fit: "contain"))
+- mAP50-95 thì biến động hơn nhưng vẫn với quy luật đã nêu trên, 20 epoch đầu có sự nhiễu loạn, sau đó tuy còn hỗn loạn nhưng đều có xu hướng tăng dần.
 
+Đây chỉ là thông số trên lý thuyết, còn thực tế kết quả có thể sai lệch, và nếu sai lệch xảy ra, model sẽ phải train lại để sửa lỗi sai đó. Quá trình train có thể diễn ra định kỳ hoặc đạt được có sự sai sót quá nhiều (chủ yếu do người dùng báo sai)
+
+=== Chạy thử Model
+Sau khi đã có model, ta chạy thử để kiểm tra hiệu quả họat động của nó
+#figure(caption: "Ảnh được sử dụng để kiểm tra",
+    image("./img/prediction_raw.JPG", fit: "contain"))
+Sau khi chạy Prediction qua Model, ta được ảnh kết quả như sau:
+#figure(caption: "Ảnh được sử dụng để kiểm tra",
+    image("./img/predictionresult.png", fit: "contain"))
 #pagebreak()
 == Trang đăng nhập và đăng ký
 Người dùng sau khi nhấn vào các nút Đăng nhập, Đăng ký ở trang chủ sẽ được điều hướng đến trang đăng nhập và đăng ký.

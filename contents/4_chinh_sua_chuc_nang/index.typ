@@ -12,10 +12,10 @@ Việc phân chia các loại giàn giáo theo type dựa vào tên tiếng Nh�
   columns: (1fr, 1fr),
   gutter: 3pt,
   figure(caption: [Chức năng thay đổi và lựa chọn các loại giàn giáo theo type 5],
-    image("../assets/change-password-service-image.png")
+    image("../assets/change-template-type5-image.png")
   ),
   figure(caption: [Chức năng thay đổi và lựa chọn các loại giàn giáo theo type 6],
-    image("../assets/change-password-service-image.png")
+    image("../assets/change-template-type6-image.png")
 )
 )
 

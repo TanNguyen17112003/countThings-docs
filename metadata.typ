@@ -1,5 +1,5 @@
 #let meta = (
-  course-name: "Thực tập Đồ án môn học đa ngành - hướng Công nghệ phần mềm",
+  course-name: "Thực tập Đồ án đa ngành - hướng Công nghệ phần mềm",
   course-id: "CO3109",
   title: "Phát triển ứng dụng đếm giàn giáo dùng AI",
   semester: 232,

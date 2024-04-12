@@ -22,7 +22,7 @@
 
   stack(
     dir: ltr,
-    [Báo cáo môn #meta.course-name - Học kỳ #semester-of-year năm học #year-from - #year-to],
+    [#meta.course-name - Học kỳ #semester-of-year năm học #year-from - #year-to],
     1fr,
     [Trang #current-page/#total-pages]
   )

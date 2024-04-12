@@ -34,34 +34,6 @@
 #figure(caption: [Use-case Đăng nhập], table())\
 
 
-
-#table(
-    columns: (auto, auto),
-    inset: 10pt,
-    align: horizon,
-    [*Use Case Name*], [*Đăng nhập*],
-    [Actors], [Người sử dụng],
-    [Brief Description], [Khách hàng sử dụng chức năng này để đăng nhập vào app.],
-    [Preconditions], [],
-    [Postconditions], [Giao diện chính của app hiện lên],
-    [Normal Flow], [
-        1. Khách hàng truy cập vào app, màn hình đăng nhập hiện lên.
-        2. Người dùng nhập tên đăng nhập và mật khẩu, kèm các lựa chọn kèm theo sau đó nhấn nút đăng nhập.
-        3. Hệ thống kiểm tra tên đăng nhập vào mật khẩu.
-        4. Hệ thống hiện giao diện màn hình chính. 
-    ],
-    [Alternative Flow], [
-        2a. Người dùng có thể đăng nhập bằng xác thực google thay vì phải nhập thông tin đăng nhập.\ 
-        2b. Nếu lần đăng nhập trước người dùng chọn Nhớ mật khẩu, hệ thống tự động điền email và mật khẩu của người dùng.
-        
-    ],
-    [Exception Flow], [
-        3a. Nếu thông tin đăng nhập không trùng khớp, hệ thống báo lỗi và yêu cầu khách hàng nhập lại
-        2b. Nếu xác thực google không thành công, hệ thống báo lỗi cho người dùng
-    ],
-)
-#figure(caption: [Use-case Đăng ký], table())\
-
 #table(
     columns: (auto, auto),
     inset: 10pt,

@@ -3,4 +3,5 @@
 #include "3_use_case/index.typ"
 #include "4_chinh_sua_chuc_nang/index.typ"
 #include "5_Model/index.typ"
+#include "6_thuan_loi_kho_khan/index.typ"
 

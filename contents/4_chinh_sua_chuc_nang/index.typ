@@ -37,12 +37,12 @@ Cập nhật chức năng thay đổi kết quả giàn giáo được đếm kh
 
 #figure(
   caption: [Chức năng thay đổi threshold trong một kết quả],
-  image("../assets/change-threshold-service-image2.png")
+  image("../assets/change-threshold-service-image3.png")
 )
 
 #figure(
   caption: [Kết quả sau khi thay đổi threshold],
-  image("../assets/change-threshold-service-image3.png")
+  image("../assets/change-threshold-service-image2.png")
 )
 
 #pagebreak()

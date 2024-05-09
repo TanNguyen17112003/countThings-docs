@@ -50,6 +50,19 @@ Cập nhật chức năng thay đổi kết quả giàn giáo được đếm kh
 
 Xây dựng database MongoDB để lưu trữ thông tin của ứng dụng giúp cho việc lưu trữ thông tin của ứng dụng một cách dễ dàng và tiện lợi hơn.
 
+#figure(caption: [Sử dụng database MongoDB để lưu trữ],
+    image("../assets/dbmongodb.jpg")
+)
+
+
+*Lợi ích của việc lưu trữ trên MongoDB so với lưu trên Server counting:*
+#block(inset: 10pt)[
+  - Dễ dàng mở rộng hệ thống
+  - Dễ dàng quản lý dữ liệu
+  - Dễ dàng thực hiện các thao tác truy vấn dữ liệu
+  - Dễ dàng thực hiện các thao tác cập nhật dữ liệu
+]
+
 === Xây dựng Relational mapping cho database MongoDB
 #figure(caption: [Relational mapping cho database MongoDB],
     image("../assets/Relational-mapping.png")

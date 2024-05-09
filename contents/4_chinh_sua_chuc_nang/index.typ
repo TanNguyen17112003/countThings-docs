@@ -45,4 +45,35 @@ Cập nhật chức năng thay đổi kết quả giàn giáo được đếm kh
   image("../assets/change-threshold-service-image2.png")
 )
 
+
+== Xây dựng database MongoDB để lưu trữ thông tin của ứng dụng
+
+Xây dựng database MongoDB để lưu trữ thông tin của ứng dụng giúp cho việc lưu trữ thông tin của ứng dụng một cách dễ dàng và tiện lợi hơn.
+
+=== Xây dựng Relational mapping cho database MongoDB
+#figure(caption: [Relational mapping cho database MongoDB],
+    image("../assets/Relational-mapping.png")
+)
+
+Mô tả sơ đồ các bảng trong database MongoDB:
+#table(
+  columns: (auto, auto),
+  inset: 10pt,
+  align: horizon,
+  [*Tên bảng*], [*Mô tả*],
+    [User], [Bảng lưu trữ thông tin của người dùng bao gồm email, tên, họ, vai trò, trạng thái người dùng],
+    [Type], [Bảng lưu trữ thông tin của các loại giàn giáo bao gồm ảnh của kiểu, tên kiểu],
+    [Model], [Bảng lưu trữ thông tin của model bao gồm tên, bản cập nhật, trạng thái và các kiểu giàn giáo có trong model đó],
+    [Image], [Bảng lưu trữ thông tin của ảnh bao gồm link ảnh, người chụp ảnh, kiểu giàn giáo có trong ảnh, đơn hàng mà ảnh đó thuộc về, trạng thái ảnh],
+    [Order], [Bảng lưu trữ thông tin của đơn hàng bao gồm tên đơn hàng, người tạo, các đơn hàng con trong đơn hàng (nếu có), đơn hàng cha của đơn hàng (nếu có), trạng thái đơn hàng, số lượng ảnh trong đơn hàng],
+    [Feedback], [Bảng lưu trữ thông tin của phản hồi bao gồm nội dung phản hồi, người phản hồi]
+)
+
+
+=== Xây dựng UML Class Diagram cho database MongoDB
+#figure(
+    caption: [UML Class Diagram cho
+    database MongoDB],
+    image("../assets/UML-Class-Diagram.png")
+)
 #pagebreak()

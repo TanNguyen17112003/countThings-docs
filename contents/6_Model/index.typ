@@ -66,12 +66,12 @@ Sau khi mất 0,851 giờ cho quá trình train với 100 chu kỳ, ta thu đư�
     image("./img/Recallv8.png", fit: "contain"))
 #figure(caption: "mAP50(Box) của Model nhận diện IQC1524",
     image("./img/map50v8.png", fit: "contain"))
-Precision, Recall và mAP50 trong 20 epoch đầu có sự biến động, sau đó có sự ổn định đến cuối
+Precision, Recall và mAP50 trong 20 epoch đầu có sự biến động, sau đó có sự ổn định đến cuối. Đây là kết quả mà chúng ta mong đợi, khi những epoch đầu có sự nhiễu lọan và đạt được sự ổn định về sau. 
 #figure(caption: "mAP50-95(Box) của Model nhận diện IQC1524",
     image("./img/map5095v8.png", fit: "contain"))
-mAP50-95 thì biến động hơn nhưng vẫn với quy luật đã nêu trên, 20 epoch đầu có sự nhiễu loạn, sau đó tuy còn hỗn loạn nhưng đều có xu hướng tăng dần.
+mAP50-95 thì biến động hơn nhưng vẫn với quy luật đã nêu trên, 20 epoch đầu có sự nhiễu loạn, sau đó tuy còn hỗn loạn nhưng đều có xu hướng tăng dần. 
 
-Đây chỉ là thông số trên lý thuyết, còn thực tế kết quả có thể sai lệch, và nếu sai lệch xảy ra, model sẽ phải train lại để sửa lỗi sai đó. Quá trình train có thể diễn ra định kỳ hoặc đạt được có sự sai sót quá nhiều (chủ yếu do người dùng báo sai)
+Đây chỉ là thông số trên lý thuyết, còn thực tế kết quả có thể sai lệch, và nếu sai lệch xảy ra, model sẽ phải train lại để sửa lỗi sai đó. Quá trình train có thể diễn ra định kỳ hoặc được kích hoạt khi có sự sai sót quá nhiều (chủ yếu do người dùng báo sai)
 
 === Chạy thử Model
 Sau khi đã có model, ta chạy thử để kiểm tra hiệu quả họat động của nó
@@ -83,3 +83,36 @@ Sau khi chạy Prediction qua Model, ta được ảnh kết quả như sau:
 #pagebreak()
 
 
+=== So sánh YOLOv8 và YOLOv9 trên cùng một tập dữ liệu nhận diện giàn giáo Type4-IQC1524
+Để so sánh và đối chiếu cũng như đánh giá model trên các phiên bản YOLO khác nhau, nhóm đã sử dụng cùng một tập dữ liệu cho giàn giáo Type4-IQC1524 để train cho model YOLOv8 (đã nói ở trên) cũng như YOLOv9, qua đó kết quả sau khi train của model YOLOv9 như sau:
+#figure(caption: "Kết quả train của Model YOLOv9 nhận diện IQC1524",
+    image("./img/v9result.png", fit: "contain"))
+Có thể thấy, YOLOv9 chỉ mất 0.608 giờ để train và cho hiệu suất về Precision, Recall và mAP50 nhỉnh hơn so với YOLOv8, trong khi đó mAP50-95 thấp hơn nhưng không đáng kể. 
+
+
+So sánh về độ chính xác của mỗi lần lặp (epoch) thì ta có biểu đồ như hình bên dưới
+#figure(caption: "Precision(Box) của YOLOv8 và YOLOv9",
+    image("./img/preciv8v9.png", fit: "contain"))
+
+Ta thấy model v9 mau chóng đạt được sự ổn định ngay từ những epoch đầu tiên, trong khi đó v8 phải đi qua 20 epoch mới đạt được sự ổn định. Dẫu vậy cả 2 model đều đạt sự ổn định tương đồng nhau, kể cả việc bị nhiễu động nhẹ ở epoch 30. Tuy nhiên v9 ít bị ảnh hưởng hơn so với v8 và cũng tốn ít epoch hơn để trở về trạng thái ổn định. 
+
+So sánh về tính Recall của 2 model, ta có biểu đồ sau:
+#figure(caption: "Recall(Box) của YOLOv8 và YOLOv9",
+    image("./img/recallv8v9.png", fit: "contain"))
+
+Ta thấy model v9 cũng mau chóng đạt được sự ổn định ngay từ những epoch đầu tiên, trong khi đó v8 phải đi qua 20 epoch mới đạt được sự ổn định. Dẫu vậy cả 2 model đều đạt sự ổn định tương đồng nhau. Song v9 có sự nhiễu động về Recall ở khoảng epoch 30, nhưng sự nhiễu động này là không đáng kể và ngay từ epoch sau đã trở về trạng thái ổn định. 
+
+So sánh về tính mAP50 của 2 model, ta có biểu đồ sau:
+#figure(caption: "mAP50(Box) của YOLOv8 và YOLOv9",
+    image("./img/map50v8v9.png", fit: "contain"))
+
+Tương tự Precision và Recall, model v9 cũng mau chóng đạt được sự ổn định ngay từ những epoch đầu tiên, trong khi đó v8 phải đi qua 20 epoch mới đạt được sự ổn định. Dẫu vậy cả 2 model đều đạt sự ổn định tương đồng nhau.
+
+
+So sánh về tính mAP50-95 của 2 model, ta có biểu đồ sau:
+#figure(caption: "mAP50-95(Box) của YOLOv8 và YOLOv9",
+    image("./img/map5095v8v9.png", fit: "contain"))
+
+Ta thấy model v9 các epoch đầu giá trị cao hơn v8. Dẫu vậy cả 2 model đều có giá trị tương đồng nhau và có sự nhiễu động cũng như chiều hướng biến thiên của giá trị đều như nhau.
+
+Tóm lại, YOLOv9 cho thời gian train nhanh hơn so với v8, đồng thời nhanh chóng đạt đến trạng thái ổn định hơn so với v8. Tuy nhiên càng về sau các thông số hầu như là như nhau. Vậy nên với 100 lần train thì kết quả đánh giá không cho thấy sự khác biệt quá lớn. Chỉ khi số lượng epoch nhỏ thì v9 sẽ tỏ ra tốt hơn so với v8. Tuy nhiên, nhóm vẫn sẽ giữ model v8 vì tiêu chí train model của nhóm cần 100 epoch nên không có sự khác biệt quá lớn về model train được. 

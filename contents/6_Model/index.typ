@@ -87,7 +87,7 @@ Sau khi chạy Prediction qua Model, ta được ảnh kết quả như sau:
 Để so sánh và đối chiếu cũng như đánh giá model trên các phiên bản YOLO khác nhau, nhóm đã sử dụng cùng một tập dữ liệu cho giàn giáo Type4-IQC1524 để train cho model YOLOv8 (đã nói ở trên) cũng như YOLOv9, qua đó kết quả sau khi train của model YOLOv9 như sau:
 #figure(caption: "Kết quả train của Model YOLOv9 nhận diện IQC1524",
     image("./img/v9result.png", fit: "contain"))
-Có thể thấy, YOLOv9 chỉ mất 0.608 giờ để train và cho hiệu suất về Precision, Recall và mAP50 nhỉnh hơn so với YOLOv8, trong khi đó mAP50-95 thấp hơn nhưng không đáng kể. 
+Có thể thấy, YOLOv9 chỉ mất 0.608 giờ để train và cho hiệu suất về Precision, Recall và mAP50 nhỉnh hơn so với YOLOv8, trong khi đó mAP50-95 thấp hơn nhưng không đáng kể. Trong khi đó kích thước model sau khi train của v9 (best.pt) thấp hơn đáng kể so với v8. Cũng như số tham số cũng thấp hơn nhiều so với v8. Tuy nhiên, số lớp của v9 lại cao hơn nhiều so với v8.
 
 
 So sánh về độ chính xác của mỗi lần lặp (epoch) thì ta có biểu đồ như hình bên dưới
